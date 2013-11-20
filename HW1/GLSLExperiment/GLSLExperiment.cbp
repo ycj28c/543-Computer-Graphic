@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="GLSLExperiment" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug Win32">
+				<Option output="GLSLExperiment" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="../glew/lib" />
+					<Add directory="../glew/include" />
+					<Add directory="../freeglut/include/GL" />
+				</Compiler>
+				<Linker>
+					<Add library="freeglut.lib" />
+					<Add library="glew32.lib" />
+					<Add library="glew32s.lib" />
+					<Add library="opengl32.lib" />
+					<Add library="glu32.lib" />
+					<Add directory="../glew/lib" />
+					<Add directory="../freeglut/lib" />
+				</Linker>
+			</Target>
+			<Target title="Release Win32">
+				<Option output="GLSLExperiment" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add directory="../glew/lib" />
+					<Add directory="../glew/include" />
+					<Add directory="../freeglut/include/GL" />
+				</Compiler>
+				<Linker>
+					<Add library="freeglut.lib" />
+					<Add library="glew32.lib" />
+					<Add library="glew32s.lib" />
+					<Add library="opengl32.lib" />
+					<Add library="glu32.lib" />
+					<Add directory="../glew/lib" />
+					<Add directory="../freeglut/lib" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="Angel.h" />
+		<Unit filename="CheckError.h" />
+		<Unit filename="InitShader.cpp" />
+		<Unit filename="example1.cpp" />
+		<Unit filename="mat.h" />
+		<Unit filename="textfile.cpp" />
+		<Unit filename="textfile.h" />
+		<Unit filename="vec.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
