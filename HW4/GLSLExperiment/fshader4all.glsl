@@ -1,7 +1,6 @@
 #version 150
 
 in  vec4 interpolatedColor;
-in  vec4 interpolatedColor2;
 in  vec2 texCoord;
 in  vec3 R;
 in  vec3 T;
@@ -12,7 +11,6 @@ uniform samplerCube texMap;
 uniform bool groundOn;
 uniform bool refleOn;
 uniform bool refraOn;
-uniform bool fogtype;
 uniform bool drawshadow;
 uniform sampler2D texture;
 
@@ -42,20 +40,12 @@ void main()
 	    fColor = interpolatedColor;
 	}
 
-	if(fogtype){
-		vec4 fogColor = vec4(1.0,1.0,1.0,1.0);
-        vec4 color = mix(fogColor,interpolatedColor2,fogFactor);
-        fColor = color;
+	if(drawshadow){
+	    fColor = vec4(0.0,0.0,0.0,1.0);
 	}
-	else{
-	    if(drawshadow){
-	        fColor = vec4(0.0,0.0,0.0,1.0);
-	    }
-        vec3 fogColor = vec3(1.0,1.0,1.0);
-	    vec3 finalColor = fColor.xyz;
-	    vec3 ccolor = mix(fogColor, finalColor, fogFactor );
-	    fColor = vec4(ccolor,1.0);
-	}	
-
+    vec3 fogColor = vec3(1.0,1.0,1.0);
+	vec3 finalColor = fColor.xyz;
+	vec3 ccolor = mix(fogColor, finalColor, fogFactor );
+	fColor = vec4(ccolor,1.0);
 } 
 
