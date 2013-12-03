@@ -180,7 +180,7 @@ void main()
 		float z = sqrt(Radius * Radius - r * r);  //z
 
 		float betax = (1-1/p)* asin(dxy.x/sqrt(dxy.x*dxy.x+z*z));
-		float betay = (1-1/p)* asin(dxy.x/sqrt(dxy.y*dxy.y+z*z));
+		float betay = (1-1/p)* asin(dxy.y/sqrt(dxy.y*dxy.y+z*z));
 
 		vec2 xy1 = xy - vec2(0,0);
 		if(r<=Radius){
